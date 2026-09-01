@@ -57,10 +57,6 @@ As funcionalidades descritas abaixo operam de forma dinâmica na aplicação par
 * **Descrição:** Coleta e estrutura os dados organizados da análise (data, hora, canal utilizado, chave Pix ou link suspeito e indicadores).
 * **Comportamento:** Gera um documento formatado com as provas organizadas para que o usuário possa anexar ao registrar um Boletim de Ocorrência ou abrir uma contestação no banco.
 
-### 6. Sintetizador de Leitura por Voz (Acessibilidade - ODS 9.c)
-* **Descrição:** Utiliza o sistema de áudio nativo do navegador (`Web Speech API`) para promover inclusão digital.
-* **Comportamento:** Lê em voz alta o diagnóstico completo e as orientações de segurança em linguagem clara e pausada, auxiliando idosos ou pessoas com deficiência visual.
-
-### 7. Gerenciador de Tema Visual (Modo Claro / Modo Escuro)
+### 6. Gerenciador de Tema Visual (Modo Claro / Modo Escuro)
 * **Descrição:** Controla a aparência visual de toda a aplicação e a personalização do usuário.
 * **Comportamento:** Altera as variáveis de cores no CSS, atualiza o ícone do botão de alternância e armazena a preferência no `localStorage` do navegador para manter o tema escolhido após recarregar a página.
