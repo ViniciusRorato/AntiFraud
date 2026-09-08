@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiFraud - Jogo Educativo & Simulador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <hgroup>
+            <h1>AntiFraud</h1>
+            <p>Simulador Educacional de Golpes</p>
+        </hgroup>
+
+        <nav aria-label="Menu Principal">
+            <a href="index.html">Início</a>
+            <a href="index.html#como-funciona">Como funciona</a>
+            <a href="simulador.html" aria-current="page">Jogo Educativo</a>
+            <a href="ods.html">ODS</a>
+            <a href="index.html#planos">Planos</a>
+            <a href="index.html#denunciar">Denunciar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="status-jogo">
+            <h2>Sua Imunidade Digital</h2>
+            <figure>
+                <meter min="0" max="1000" value="850">850 pontos</meter>
+                <figcaption>
+                    <strong>Pontuação Atual: 850 pts</strong>
+                    <p>Nível: Detetive Digital</p>
+                </figcaption>
+            </figure>
+            <p><small>Desafio 2 de 10</small></p>
+        </section>
+
+        <section id="desafio-card">
+            <h2>Analise o Caso Abaixo</h2>
+
+            <article>
+                <header>
+                    <h3>Remetente: contato@segur.bank-seguro.com</h3>
+                    <p><strong>Assunto: ALERTA DE SEGURANÇA - ACESSO BLOQUEADO!</strong></p>
+                </header>
+                
+                <blockquote>
+                    <p>Olá, Prezado Cliente.</p>
+                    <p>Detectamos um acesso não autorizado à sua conta. Para reativá-la e evitar o bloqueio permanente, confirme seus dados no link abaixo:</p>
+                    <p><code>secure.segur-bank-reativar.com/validar</code></p>
+                    <p><em>*Atenção: O link expira em 30 minutos.*</em></p>
+                </blockquote>
+
+                <menu>
+                    <li><button type="button" class="btn-legitimo">Legítimo</button></li>
+                    <li><button type="button" class="btn-golpe">Golpe</button></li>
+                </menu>
+            </article>
+        </section>
+
+        <section id="feedback-jogo" aria-live="polite">
+            <h2>Por que é um golpe?</h2>
+            <article>
+                <h3>Análise do Especialista</h3>
+                <ul>
+                    <li><strong>Domínio Falso:</strong> O banco oficial não utiliza o endereço <code>segur-bank-reativar.com</code>.</li>
+                    <li><strong>Gatilho de Urgência:</strong> Imposição de prazo curto (30 minutos) para gerar pânico.</li>
+                    <li><strong>Link Suspeito:</strong> Páginas legítimas não solicitam validação de dados via links urgentes em e-mail.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <section id="contato">
+            <h2>AntiFraud © 2026</h2>
+            <address>
+                São Paulo - SP | <a href="mailto:contato@antifraud.com.br">contato@antifraud.com.br</a>
+            </address>
+        </section>
+
+        <nav aria-label="Redes Sociais">
+            <a href="#" rel="external">Instagram</a>
+            <a href="#" rel="external">LinkedIn</a>
+        </nav>
+    </footer>
+</body>
+</html>
