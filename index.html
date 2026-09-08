@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AntiFraud - Identificação e Prevenção de Golpes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -13,40 +14,38 @@
             <p>Identificação e prevenção de golpes</p>
         </hgroup>
 
-        <nav aria-label="Navegação principal">
-            <a href="#inicio">Início</a>
-            <a href="#como_funciona">Como funciona</a>
-            <a href="#recursos">Recursos</a>
+        <nav aria-label="Menu Principal">
+            <a href="#analise">Início</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="jogo.html">Jogo Educativo</a>
+            <a href="ods.html">ODS</a>
+            <a href="#planos">Planos</a>
             <a href="#denunciar">Denunciar</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
-            <a href="#painel" role="button">Painel</a>
         </nav>
     </header> 
 
-    <main id="inicio">
-        <section aria-labelledby="analise-titulo">
-            <h2 id="analise-titulo" hidden>Análise de Mensagem</h2>
+    <main>
+        <section id="analise">
+            <h2>Análise de Ameaça</h2>
             <form action="#" method="POST">
-                <label for="texto-suspeito" hidden>Cole a mensagem ou link suspeito</label>
-                <textarea id="texto-suspeito" name="texto_suspeito" rows="5" placeholder="Cole aqui o texto da mensagem, link ou chave Pix suspeita..."></textarea>
+                <label for="texto-suspeito">Cole a mensagem, link ou chave Pix suspeita:</label>
+                <textarea id="texto-suspeito" name="texto_suspeito" rows="4" placeholder="Cole aqui o conteúdo..." required></textarea>
                 
                 <menu>
                     <li><button type="submit">Analisar agora</button></li>
-                    <li><button type="button">Dúvida? Ouvir instruções em áudio (ODS 9.c)</button></li>
+                    <li><button type="button">Ouvir áudio</button></li>
                 </menu>
             </form>
         </section>
 
-        <section aria-labelledby="painel-risco-titulo">
-            <h2 id="painel-risco-titulo">Painel de Risco</h2>
-            <p>Acompanhe o nível de risco da ameaça analisada.</p>
+        <section id="painel-risco" aria-live="polite">
+            <h2>Painel de Risco</h2>
             
             <figure>
                 <meter min="0" max="100" value="85" low="30" high="70" optimum="0">85%</meter>
                 <figcaption>
-                    <p><strong>85% - RISCO ALTO</strong></p>
-                    <p>Alta probabilidade de risco detectada.</p>
+                    <strong>85% - RISCO ALTO</strong>
+                    <p>Alta probabilidade de fraude.</p>
                 </figcaption>
             </figure>
 
@@ -54,216 +53,113 @@
                 <h3>Indicadores Detectados</h3>
                 <ul>
                     <li>Padrão de Urgência</li>
-                    <li>Solicitação excessiva</li>
-                    <li>Link Malicioso</li>
-                    <li>Erros de ortografia</li>
-                    <li>Promessas irreais</li>
-                    <li>Padrão já identificado</li>
+                    <li>Link Malicioso / Encurtado</li>
+                    <li>Solicitação excessiva de dados</li>
                 </ul>
-                <a href="#relatorio-detalhado">Ver relatório completo &gt;</a>
             </article>
 
             <article>
-                <h3>Evidências Encontradas</h3>
+                <h3>Evidências Sanitizadas</h3>
                 <ul>
-                    <li>Padrão de Urgência</li>
-                    <li>Link/URL Automática</li>
-                    <li>Link Malicioso</li>
-                </ul>
-                
-                <h3>Dados de Contato Detectados</h3>
-                <ul>
-                    <li>CPFs/E-mails Identificados</li>
-                    <li>CPFs/E-mails Identificados</li>
-                    <li>CPFs/E-mails Identificados</li>
+                    <li>CPF/E-mail anonimizados: <code>***.***.***-**</code></li>
+                    <li>Redirecionamento suspeito detectado</li>
                 </ul>
             </article>
+
+            <menu>
+                <li><a href="#pdf" download>Gerar Relatório (PDF)</a></li>
+                <li><a href="#denunciar">Denunciar Golpe</a></li>
+            </menu>
         </section>
 
-        <section id="como_funciona">
+        <section id="como-funciona">
             <h2>Como funciona?</h2>
-            <p>Nosso processo é simples, rápido e eficaz.</p>
-
             <ol>
-                <li>
-                    <article>
-                        <h3>1. Envie</h3>
-                        <p>Envie o conteúdo suspeito: mensagem, link, imagem ou documento.</p>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h3>2. Sanitizamos</h3>
-                        <p>Nossos IA e base de dados analisam padrões e comportamentos.</p>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h3>3. Analisamos</h3>
-                        <p>Comparamos com mais de 100 mil registros de fraudes conhecidas.</p>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h3>4. Resultado</h3>
-                        <p>Você recebe o nível de risco, detalhes e recomendações imediatas.</p>
-                    </article>
-                </li>
-                <li>
-                    <article>
-                        <h3>5. Ação</h3>
-                        <p>Se confirmado, você recebe alertas e dicas para se proteger.</p>
-                    </article>
-                </li>
+                <li><strong>Envie:</strong> Cole a mensagem ou link suspeito.</li>
+                <li><strong>Sanitizamos:</strong> Ocultamos dados pessoais sensíveis.</li>
+                <li><strong>Analisamos:</strong> Verificamos heurística e base de golpes.</li>
+                <li><strong>Resultado:</strong> Receba o diagnóstico imediato.</li>
+                <li><strong>Ação:</strong> Gere relatório B.O. ou alertes a rede.</li>
             </ol>
         </section>
 
-        <section aria-labelledby="ferramentas-titulo">
-            <h2 id="ferramentas-titulo" hidden>Ferramentas de Proteção</h2>
+        <section id="ods">
+            <h2>Alinhamento aos ODS da ONU</h2>
             
-            <a href="#relatorio-pdf" download>Gerador de Relatório de Evidências (PDF)</a>
+            <article>
+                <h3>ODS 8: Trabalho Decente e Crescimento Econômico</h3>
+                <p>Mitiga perdas financeiras em pequenos negócios e renda familiar.</p>
+            </article>
 
-            <section aria-labelledby="modulos-titulo">
-                <h3 id="modulos-titulo" hidden>Módulos de Análise</h3>
-                <article>
-                    <h4>Análise em JS</h4>
-                    <p>Analisa textos e conversas suspeitas com nossa base de dados e IA.</p>
-                    <a href="#analise-js">Analisar &gt;</a>
-                </article>
-                <article>
-                    <h4>Sanitização Automática</h4>
-                    <p>Verifica relatórios de infecção e recebe alertas de novas ameaças.</p>
-                    <a href="#sanitizacao">Acessar &gt;</a>
-                </article>
-                <article>
-                    <h4>Proteção Contínua</h4>
-                    <p>Monitore e proteja-se em tempo real contra novas fraudes.</p>
-                    <a href="#protecao">Ativar &gt;</a>
-                </article>
-            </section>
-
-            <section aria-labelledby="ods-titulo">
-                <h3 id="ods-titulo">Alinhado aos ODS da ONU</h3>
-                <figure>
-                    <figcaption>ODS 16: Justiça</figcaption>
-                </figure>
-                <figure>
-                    <figcaption>ODS 9: Inovação e Acessibilidade</figcaption>
-                </figure>
-                <figure>
-                    <figcaption>Base Comunitária</figcaption>
-                </figure>
-            </section>
+            <article>
+                <h3>ODS 16: Paz, Justiça e Instituições Eficazes</h3>
+                <p>Estrutura provas formatadas para denúncias e Boletins de Ocorrência.</p>
+            </article>
         </section>
 
-        <section id="recursos">
-            <h2>Recursos</h2>
-            <p>Planos para proteger você, sua família ou sua empresa.</p>
+        <section id="planos">
+            <h2>Planos</h2>
 
             <article>
-                <h3>Plano Pessoal</h3>
-                <p>Ideal para uso pessoal.</p>
-                <ul>
-                    <li>10 análises por mês</li>
-                    <li>Acesso à base de dados</li>
-                    <li>Relatórios básicos</li>
-                </ul>
-                <p><data value="19.90"><strong>R$ 19,90</strong> /mês</data></p>
-                <button type="button">Escolher plano</button>
+                <h3>Pessoal</h3>
+                <p><data value="19.90"><strong>R$ 19,90</strong>/mês</data></p>
+                <button type="button">Escolher</button>
             </article>
 
             <article>
-                <h3>Plano Intermediário</h3>
-                <p>Para quem busca mais proteção.</p>
-                <ul>
-                    <li>Sanitização Automática</li>
-                    <li>Sanitização Automática</li>
-                </ul>
-                <button type="button">Escolher plano</button>
+                <h3>Profissional</h3>
+                <p><data value="49.90"><strong>R$ 49,90</strong>/mês</data></p>
+                <button type="button">Escolher</button>
             </article>
 
             <article>
-                <h3>Plano Empresarial</h3>
-                <p>Solução completa para empresas.</p>
-                <ul>
-                    <li>Tudo do plano Pro</li>
-                    <li>Painel administrativo</li>
-                    <li>Integração via API</li>
-                    <li>Suporte dedicado</li>
-                </ul>
-                <p><data value="99.90"><strong>R$ 99,90</strong> /mês</data></p>
-                <button type="button">Escolher plano</button>
+                <h3>Empresarial</h3>
+                <p><data value="99.90"><strong>R$ 99,90</strong>/mês</data></p>
+                <button type="button">Escolher</button>
             </article>
         </section>
 
         <section id="denunciar">
-            <section id="contato" aria-labelledby="denuncia-titulo">
-                <h2 id="denuncia-titulo">Denuncie um Golpe</h2>
-                <p>Tem dúvidas ou encontrou um golpe? Entre em contato.</p>
+            <h2>Denunciar um Golpe</h2>
 
-                <figure>
-                    <figcaption hidden>Ilustração sobre denúncias de golpes</figcaption>
-                </figure>
+            <form action="#" method="POST">
+                <p>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </p>
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </p>
+                <button type="submit">Enviar Denúncia</button>
+            </form>
 
-                <form action="#" method="POST">
-                    <p>
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-                    </p>
-                    <p>
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                    </p>
-                    <p>
-                        <label for="assunto">Assunto:</label>
-                        <select id="assunto" name="assunto">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="golpe">Denunciar Golpe</option>
-                            <option value="duvida">Dúvida</option>
-                            <option value="outro">Outro</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
-                    </p>
-                    <p>
-                        <button type="submit">Enviar mensagem</button>
-                        <label>
-                            <input type="checkbox" name="newsletter" value="aceito"> Concordo em receber novidades e alertas.
-                        </label>
-                    </p>
-                </form>
-            </section>
-
-            <aside aria-labelledby="feed-titulo">
-                <h2 id="feed-titulo">Feed de Alertas Comunitários</h2>
+            <aside>
+                <h3>Alertas Recentes</h3>
+                <ul>
+                    <li>SMS Falso de Banco</li>
+                    <li>Golpe do Falso Parente no WhatsApp</li>
+                </ul>
             </aside>
         </section>
     </main>
 
     <footer>
-        <section id="sobre" aria-labelledby="sobre-titulo">
-            <h2 id="sobre-titulo" hidden>Sobre a Plataforma</h2>
-            <p><strong>AntiFraud © 2026</strong></p>
-            <p>Tecnologia e inteligência contra fraudes.</p>
-            
+        <section id="contato">
+            <h2>AntiFraud © 2026</h2>
             <address>
-                Rua das Palmeiras, 500<br>
-                São Paulo - SP<br>
-                E-mail: <a href="mailto:contato@antifraud.com.br">contato@antifraud.com.br</a>
+                São Paulo - SP | <a href="mailto:contato@antifraud.com.br">contato@antifraud.com.br</a>
             </address>
         </section>
 
         <nav aria-label="Redes Sociais">
-            <p>Siga-nos</p>
             <a href="#" rel="external">Instagram</a>
-            <a href="#" rel="external">Facebook</a>
-            <a href="#" rel="external">YouTube</a>
             <a href="#" rel="external">LinkedIn</a>
         </nav>
-
-        <p><small>© 2026 AntiFraud / FraudGuard. Todos os direitos reservados.</small></p>
     </footer>
 </body>
 </html>
