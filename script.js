@@ -1,10 +1,3 @@
-/* ==========================================================================
-   AntiFraud — Jogo de Detecção de Golpes
-   Versão simplificada: código direto, sem abstrações extras.
-   Leia de cima para baixo — é exatamente a ordem em que o jogo acontece.
-   ========================================================================== */
-
-// 1. LISTA DE CASOS DO JOGO
 // Cada objeto é uma mensagem. "golpe: true" = é fraude / "golpe: false" = é real.
 const casos = [
   {
