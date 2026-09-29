@@ -1,27 +1,28 @@
-// 1. PADRÕES (REGEX) DOS DADOS SENSÍVEIS
-const padraoCPF = /\d{3}\.?\d{3}\.?\d{3}-?\d{2}/g;
-const padraoEmail = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+/**
+ * Módulo Sanitizador de Dados Pessoais
+ */
 
-// 2. ELEMENTOS DA PÁGINA
-const formulario = document.getElementById("form-analise");
-const campoTexto = document.getElementById("texto-suspeito");
-const areaResultado = document.getElementById("resultado-sanitizado");
-const textoResultado = document.getElementById("texto-sanitizado");
+const PADRAO_CPF = /\b\d{3}\.?\d{3}\.?\d{3}-?\d{2}\b/g;
+const PADRAO_EMAIL = /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/g;
 
-// 3. FUNÇÃO QUE FAZ A SANITIZAÇÃO
-function sanitizarTexto(texto) {
-  return texto
-    .replace(padraoCPF, "***.***.***-**")
-    .replace(padraoEmail, "***@***.***");
+/**
+ * Substitui dados sensíveis por marcadores anónimos e retorna as evidências encontradas.
+ * @param {string} texto 
+ * @returns {{ textoSanitizado: string, evidencias: string[] }}
+ */
+export function sanitizarTexto(texto) {
+  const evidencias = [];
+  let textoSanitizado = texto;
+
+  if (PADRAO_CPF.test(texto)) {
+    textoSanitizado = textoSanitizado.replace(PADRAO_CPF, "***.***.***-**");
+    evidencias.push("CPF detectado e anonimizado: <code>***.***.***-**</code>");
+  }
+
+  if (PADRAO_EMAIL.test(texto)) {
+    textoSanitizado = textoSanitizado.replace(PADRAO_EMAIL, "***@***.***");
+    evidencias.push("E-mail detectado e anonimizado: <code>***@***.***</code>");
+  }
+
+  return { textoSanitizado, evidencias };
 }
-
-// 4. AO CLICAR EM "ANALISAR AGORA"
-formulario.addEventListener("submit", function (evento) {
-  evento.preventDefault(); // evita recarregar a página
-
-  const textoOriginal = campoTexto.value;
-  const textoLimpo = sanitizarTexto(textoOriginal);
-
-  textoResultado.textContent = textoLimpo;
-  areaResultado.hidden = false;
-});

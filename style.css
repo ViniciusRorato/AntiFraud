@@ -1,19 +1,24 @@
-/* ==========================================================================
-   1. PALETA E VARIÁVEIS (SAAS PREMIUM)
-   ========================================================================== */
-   :root {
-    --bg-dark: #0f172a;        /* Azul escuro corporativo profundo */
-    --card-bg: #1e293b;       /* Cards com bom destaque */
-    --card-border: #334155;   /* Borda bem definida */
-    
-    --text-main: #f8fafc;     /* Texto claro de alta legibilidade */
+/* Variáveis Padrão (Modo Escuro) */
+:root {
+    --bg-dark: #0f172a;        /* Fundo escuro */
+    --card-bg: #1e293b;       /* Fundo dos cards */
+    --card-border: #334155;   /* Bordas */
+    --text-main: #f8fafc;     /* Texto claro */
     --text-sub: #94a3b8;      /* Texto secundário */
-    
-    --brand-red: #e11d48;     /* Vermelho alerta vibrante na medida */
+    --brand-red: #e11d48;
     --brand-red-hover: #f43f5e;
-    
-    --radius: 10px;           /* Arredondamento padrão */
+    --radius: 10px;
 }
+
+/* Quando o atributo data-theme="light" está ativo */
+[data-theme="light"] {
+    --bg-dark: #f8fafc;        /* Fundo claro */
+    --card-bg: #ffffff;       /* Fundo dos cards branco */
+    --card-border: #cbd5e1;   /* Bordas claras */
+    --text-main: #0f172a;     /* Texto escuro */
+    --text-sub: #475569;      /* Texto secundário escuro */
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -52,8 +57,8 @@ header {
     top: 0;
     z-index: 1000;
     
-    /* Efeito de vidro fosco para o conteúdo deslizar suavemente por trás */
-    background: rgba(30, 41, 59, 0.85);
+    /* Efeito de vidro fosco usando a variável de tema */
+    background: var(--header-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     
@@ -61,7 +66,7 @@ header {
     border-radius: 0;
     border-bottom: 1px solid var(--card-border);
     margin-bottom: 32px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 header hgroup {
@@ -99,6 +104,12 @@ nav a {
     padding: 6px 12px;
     border-radius: 6px;
     transition: all 0.2s ease;
+}
+
+[data-theme="light"] nav a:hover, 
+[data-theme="light"] nav a[aria-current="page"] {
+    color: var(--brand-red);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 nav a:hover, nav a[aria-current="page"] {
