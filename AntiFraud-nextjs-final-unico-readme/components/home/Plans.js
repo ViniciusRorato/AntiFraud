@@ -1,0 +1,1 @@
+export default function Plans(){const plans=[['Pessoal','19,90','19.90'],['Profissional','49,90','49.90'],['Empresarial','99,90','99.90']];return <section id="planos"><h2>Planos</h2>{plans.map(([n,p,v])=><article key={n}><h3>{n}</h3><p><data value={v}><strong>R$ {p}</strong>/mês</data></p><button type="button">Escolher</button></article>)}</section>}
