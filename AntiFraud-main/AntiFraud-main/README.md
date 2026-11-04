@@ -89,52 +89,11 @@ Para garantir o funcionamento 100% dinâmico sem importações estáticas direta
 5. Implementação da API e Exemplo de Consumo
 Abaixo estão os trechos de código representativos das alterações efetuadas:
 5.1 Rota de API (app/api/casos/route.js)
-import { NextResponse } from 'next/server';
-import path from 'path';
-import { promises as fs } from 'fs';
+<img width="941" height="459" alt="image" src="https://github.com/user-attachments/assets/40c91347-5408-465b-878b-f4016885624e" />
 
-export async function GET(request) {
-  try {
-    const filePath = path.join(process.cwd(), 'public', 'data', 'casos.json');
-    const fileContents = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(fileContents);
-
-    return NextResponse.json(data, { status: 200 });
-  } catch (error) {
-    console.error('Erro ao ler casos.json:', error);
-    return NextResponse.json(
-      { error: 'Erro ao carregar dados dos casos.' },
-      { status: 500 }
-    );
-  }
-}
 5.2 Exemplo de Consumo no Cliente via fetch
-'use client';
+<img width="934" height="628" alt="image" src="https://github.com/user-attachments/assets/59648bb5-c540-4896-a450-aab197304dde" />
 
-import { useEffect, useState } from 'react';
-
-export default function RiskPanel() {
-  const [casos, setCasos] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchCasos() {
-      try {
-        const res = await fetch('/api/casos');
-        const data = await res.json();
-        setCasos(data);
-      } catch (err) {
-        console.error('Erro ao carregar casos via API:', err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchCasos();
-  }, []);
-
-  if (loading) return <p>Carregando dados via API...</p>;
-  return <div>{/* Renderização dinâmica dos casos */}</div>;
-}
 6. Conclusão e Recomendações
 Com a adição da seção dedicada aos componentes que utilizam `fetch`, o relatório agora reflete completamente toda a cadeia de dados da aplicação — desde a leitura no sistema de arquivos pelo servidor até a renderização interativa no cliente.
 
