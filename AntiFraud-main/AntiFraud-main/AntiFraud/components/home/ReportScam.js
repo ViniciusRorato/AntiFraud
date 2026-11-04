@@ -1,0 +1,31 @@
+'use client';
+
+export default function ReportScam() {
+  return (
+    <section id="denunciar">
+      <h2>Denunciar um Golpe</h2>
+      <form action="#" method="POST" onSubmit={(e) => e.preventDefault()}>
+        <p>
+          <label htmlFor="nome">Nome:</label>
+          <input id="nome" name="nome" required type="text" />
+        </p>
+        <p>
+          <label htmlFor="email">E-mail:</label>
+          <input id="email" name="email" required type="email" />
+        </p>
+        <p>
+          <label htmlFor="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" required />
+        </p>
+        <button type="submit">Enviar Denúncia</button>
+      </form>
+      <aside>
+        <h3>Alertas Recentes</h3>
+        <ul>
+          <li>SMS Falso de Banco</li>
+          <li>Golpe do Falso Parente no WhatsApp</li>
+        </ul>
+      </aside>
+    </section>
+  );
+}

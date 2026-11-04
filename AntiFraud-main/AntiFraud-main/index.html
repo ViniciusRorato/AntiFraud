@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AntiFraud - Identificação e Prevenção de Golpes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <hgroup>
+            <h1>AntiFraud</h1>
+            <p>Identificação e prevenção de golpes</p>
+        </hgroup>
+
+        <nav aria-label="Menu Principal">
+            <a href="#analise">Início</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="jogo.html">Jogo Educativo</a>
+            <a href="ods.html">ODS</a>
+            <a href="#planos">Planos</a>
+            <a href="#denunciar">Denunciar</a>
+            <button type="button" id="btn-tema" style="padding: 6px 12px; margin-left: 8px;">☀️ Modo Claro</button>
+        </nav>
+    </header> 
+
+    <main>
+        <section id="analise">
+            <h2>Análise de Ameaça</h2>
+            <form action="#" method="POST">
+                <label for="texto-suspeito">Cole a mensagem, link ou chave Pix suspeita:</label>
+                <textarea id="texto-suspeito" name="texto_suspeito" rows="4" placeholder="Cole aqui o conteúdo..." required></textarea>
+                
+                <menu>
+                    <li><button type="submit">Analisar agora</button></li>
+                    <li><button type="button">Ouvir áudio</button></li>
+                </menu>
+            </form>
+        </section>
+
+        <section id="painel-risco" aria-live="polite">
+            <h2>Painel de Risco</h2>
+            
+            <figure>
+                <meter min="0" max="100" value="85" low="30" high="70" optimum="0">85%</meter>
+                <figcaption>
+                    <strong>85% - RISCO ALTO</strong>
+                    <p>Alta probabilidade de fraude.</p>
+                </figcaption>
+            </figure>
+
+            <article>
+                <h3>Indicadores Detectados</h3>
+                <ul>
+                    <li>Padrão de Urgência</li>
+                    <li>Link Malicioso / Encurtado</li>
+                    <li>Solicitação excessiva de dados</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Evidências Sanitizadas</h3>
+                <ul>
+                    <li>CPF/E-mail anonimizados: <code>***.***.***-**</code></li>
+                    <li>Redirecionamento suspeito detectado</li>
+                </ul>
+            </article>
+
+            <menu>
+                <li><a href="#pdf" download>Gerar Relatório (PDF)</a></li>
+                <li><a href="#denunciar">Denunciar Golpe</a></li>
+            </menu>
+        </section>
+
+        <section id="como-funciona">
+            <h2>Como funciona?</h2>
+            <ol>
+                <li><strong>Envie:</strong> Cole a mensagem ou link suspeito.</li>
+                <li><strong>Sanitizamos:</strong> Ocultamos dados pessoais sensíveis.</li>
+                <li><strong>Analisamos:</strong> Verificamos heurística e base de golpes.</li>
+                <li><strong>Resultado:</strong> Receba o diagnóstico imediato.</li>
+                <li><strong>Ação:</strong> Gere relatório B.O. ou alertes a rede.</li>
+            </ol>
+        </section>
+
+        <section id="ods">
+            <h2>Alinhamento aos ODS da ONU</h2>
+            
+            <article>
+                <h3>ODS 8: Trabalho Decente e Crescimento Econômico</h3>
+                <p>Mitiga perdas financeiras em pequenos negócios e renda familiar.</p>
+            </article>
+
+            <article>
+                <h3>ODS 16: Paz, Justiça e Instituições Eficazes</h3>
+                <p>Estrutura provas formatadas para denúncias e Boletins de Ocorrência.</p>
+            </article>
+        </section>
+
+        <section id="planos">
+            <h2>Planos</h2>
+
+            <article>
+                <h3>Pessoal</h3>
+                <p><data value="19.90"><strong>R$ 19,90</strong>/mês</data></p>
+                <button type="button">Escolher</button>
+            </article>
+
+            <article>
+                <h3>Profissional</h3>
+                <p><data value="49.90"><strong>R$ 49,90</strong>/mês</data></p>
+                <button type="button">Escolher</button>
+            </article>
+
+            <article>
+                <h3>Empresarial</h3>
+                <p><data value="99.90"><strong>R$ 99,90</strong>/mês</data></p>
+                <button type="button">Escolher</button>
+            </article>
+        </section>
+
+        <section id="denunciar">
+            <h2>Denunciar um Golpe</h2>
+
+            <form action="#" method="POST">
+                <p>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </p>
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </p>
+                <button type="submit">Enviar Denúncia</button>
+            </form>
+
+            <aside>
+                <h3>Alertas Recentes</h3>
+                <ul>
+                    <li>SMS Falso de Banco</li>
+                    <li>Golpe do Falso Parente no WhatsApp</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <section id="contato">
+            <h2>AntiFraud © 2026</h2>
+            <address>
+                São Paulo - SP | <a href="mailto:contato@antifraud.com.br">contato@antifraud.com.br</a>
+            </address>
+        </section>
+
+        <nav aria-label="Redes Sociais">
+            <a href="#" rel="external">Instagram</a>
+            <a href="#" rel="external">LinkedIn</a>
+        </nav>
+    </footer>
+<!-- ... restante do seu HTML ... -->
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
